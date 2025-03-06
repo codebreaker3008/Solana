@@ -1,4 +1,4 @@
-# Solbate
+# Solana
 
 ## Inspiration
 Solana (SOL) offers countless possibilities to gamify human activities. Online debates are a fascinating social phenomenon, and integrating AI agents (powered by LLMs) into the Solana blockchain opens up new ways to engage online communities. **Solbate** was created to gamify debates among users with SOL wallets in a transparent and decentralized manner.
