@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider             = "prisma-client-js"
+  recursive_type_depth = -1
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  address String
+  cost    Float
+
+  topic    Topic? @relation(fields: [topic_id], references: [id])
+  topic_id Int?
+
+  victory  Boolean @default(false)
+  content  String? @db.Text
+  response String? @db.Text
+}
+
+model Topic {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  completed Boolean  @default(false)
+
+  short_desc String
+  topic      String
+
+  messages Message[]
+}
